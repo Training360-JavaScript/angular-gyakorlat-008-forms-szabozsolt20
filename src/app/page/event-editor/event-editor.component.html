@@ -4,8 +4,7 @@
 
       <div class="form-group">
         <label for="">Name</label>
-        <input name="name" [(ngModel)]="event.name" type="text"
-          class="form-control" pattern=".{8,25}" required>
+        <input name="name" [(ngModel)]="event.name" type="text" class="form-control" pattern=".{8,25}" required>
         <div [hidden]="eventForm.controls.name?.valid" class="error-message">
           Név: legalább 8, maximum 25 karakter hosszú legyen!
         </div>
@@ -13,31 +12,32 @@
 
       <div class="form-group">
         <label for="">Date</label>
-        <input name="date" [(ngModel)]="event.date" type="text"
-          class="form-control" required
+        <input name="date" [(ngModel)]="event.date" type="text" class="form-control" required
           pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/\d{4}$">
-          <div [hidden]="eventForm.controls.date?.valid" class="error-message">
-            Dátum: az angol dátum formátumot kövesse: 00/00/0000 nap/hó/év!
-          </div>
+        <div [hidden]="eventForm.controls.date?.valid" class="error-message">
+          Dátum: az angol dátum formátumot kövesse: 00/00/0000 nap/hó/év!
+        </div>
       </div>
 
       <div class="form-group">
         <label for="">Time</label>
-        <input name="time" [(ngModel)]="event.time" type="text" class="form-control" required pattern="^(0[1-9]|1[12])[ap]m$" >
-      </div>
-      <div [hidden]="eventForm.controls.time?.valid" class="error-message">
-        Idő: formátuma: 00am vagy 00pm lehet, például 11am.
+        <input name="time" [(ngModel)]="event.time" type="text" class="form-control" required
+          pattern="^(0[1-9]|1[12])[ap]m$">
+        <div [hidden]="eventForm.controls.time?.valid" class="error-message">
+          Idő: formátuma: 00am vagy 00pm lehet, például 11am.
+        </div>
       </div>
 
       <div class="form-group">
         <label for="">Location</label>
-        <input name="location" [(ngModel)]="event.location" type="text" class="form-control" required pattern="^[A-Ű].{4,24}$">
-      </div>
-      <div [hidden]="eventForm.controls.location?.valid" class="error-message">
-        Location: legalább 5, maximum 25 karakter, nagybetűvel kezdődik.
+        <input name="location" [(ngModel)]="event.location" type="text" class="form-control" required
+          pattern="^[A-Ű].{4,24}$">
+        <div [hidden]="eventForm.controls.location?.valid" class="error-message">
+          Location: legalább 5, maximum 25 karakter, nagybetűvel kezdődik.
+        </div>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block btn-lg">
+      <button #btn  id="btn" type="submit" class="btn btn-primary btn-block btn-lg">
         <i class="fa fa-save"></i>
       </button>
     </form>

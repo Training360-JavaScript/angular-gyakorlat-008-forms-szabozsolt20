@@ -1,5 +1,28 @@
 
 
+.error-message {
+  animation-name: bg;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+  position: relative;
+}
+
+@keyframes bg {
+  from {
+    background-color: white;
+    top: -10px;
+  }
+  to {
+    background-color: red;
+    top: 0px;
+  }
+  /*   0%   {background-color: red; top:0px}
+    25%  {background-color: white;top:10px}
+    50%  {background-color: red;top:10px}
+    100% {background-color: white;top:0px}
+   */
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 /*!
