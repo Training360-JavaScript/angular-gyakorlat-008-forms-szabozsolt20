@@ -33,8 +33,8 @@ export class EventService {
     return this.http.post<Event>(this.eventsUrl, event);
   }
 
-  remove(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.eventsUrl}/${id}`);
+  remove(id: number): Observable<Event> {
+    return this.http.delete<Event>(`${this.eventsUrl}/${id}`);
   }
 
 }
