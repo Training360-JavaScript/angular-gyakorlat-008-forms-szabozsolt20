@@ -47238,9 +47238,8 @@ If '${name}' is a directive input, make sure the directive is imported by the cu
         ngOnInit() {
         }
         onDelete(event) {
-          this.eventService.remove(event.id).subscribe((event2) => {
-            console.log(event2);
-          });
+          this.eventService.remove(event.id).subscribe((event2) => console.log(event2));
+          setTimeout(() => this.eventList$ = this.eventService.getAll(), 1e3);
         }
       };
       EventsListComponent = __decorateClass([

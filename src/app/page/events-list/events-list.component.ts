@@ -16,12 +16,16 @@ export class EventsListComponent implements OnInit {
   constructor(
     private eventService: EventService,
     private router: Router,
-  ) { }
+  ) {
 
-  ngOnInit(): void {}
+  }
 
-  onDelete(event: Event):void {
-    this.eventService.remove(event.id).subscribe(event => {console.log(event)});
+  ngOnInit(): void { }
+
+  onDelete(event: Event): void {
+    this.eventService.remove(event.id).subscribe(event => console.log(event));
+    //this.eventList$  = this.eventService.getAll();
+    setTimeout(() => this.eventList$ = this.eventService.getAll(), 1000);
     //console.log(event);
   }
 
